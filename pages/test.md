@@ -1,5 +1,5 @@
 ---
-layout: fullscreen.html
+layout: fullscreen
 menu: test
 permalink: /test/
 ---
