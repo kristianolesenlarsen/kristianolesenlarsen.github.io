@@ -95,15 +95,15 @@ a {
   text-align: center;
 
   @include large {
-    padding: 15rem 16rem;
+    padding: 5rem 6rem;
   }
 
   @include medium {
-    padding: 13rem 14rem;
+    padding: 3rem 4rem;
   }
 
   @include small {
-    padding: 12rem 11rem;
+    padding: 2rem 1rem;
   }
 }
 
