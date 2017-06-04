@@ -1,5 +1,6 @@
 ---
 title: Someting
+description: something more 
 layout: fullscreen
 menu: test
 permalink: /test/
