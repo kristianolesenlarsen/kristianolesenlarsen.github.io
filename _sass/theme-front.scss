@@ -31,6 +31,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: $body-text-color;
+
 }
 
 a {
@@ -92,6 +93,18 @@ a {
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
   background-size: cover;
+
+  @include large {
+    padding: 15rem 16rem;
+  }
+
+  @include medium {
+    padding: 13rem 14rem;
+  }
+
+  @include small {
+    padding: 12rem 11rem;
+  }
 }
 
 .project-name {
