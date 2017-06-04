@@ -1,5 +1,6 @@
 ---
 title: Forside
+desription: En forside
 layout: default
 ---
 
