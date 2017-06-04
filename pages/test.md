@@ -1,4 +1,5 @@
 ---
+title: Someting
 layout: fullscreen
 menu: test
 permalink: /test/
