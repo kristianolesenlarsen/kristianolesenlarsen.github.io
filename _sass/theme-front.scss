@@ -109,6 +109,7 @@ a {
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
+  font-weight: normal;
 
   @include large {
     font-size: 3.25rem;
@@ -124,7 +125,7 @@ a {
 }
 
 .project-tagline {
-  margin-bottom: 12rem;
+  margin-bottom: 2rem;
   font-weight: normal;
   opacity: 0.7;
 
