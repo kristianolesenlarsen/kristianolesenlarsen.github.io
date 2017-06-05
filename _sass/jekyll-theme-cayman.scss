@@ -93,7 +93,7 @@ a {
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
   font-family: "Open Sans Condensed", sans-serif;
   font: "Open Sans Condensed", sans-serif;
-  
+
   @include large {
     padding: 5rem 6rem;
   }
