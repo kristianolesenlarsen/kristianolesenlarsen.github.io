@@ -117,7 +117,7 @@ a {
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
-  font-weight: normal;
+  font-weight: 100;
 
   @include large {
     font-size: 3.25rem;
@@ -329,7 +329,7 @@ a {
 
 .site-footer {
   padding-top: 2rem;
-  margin-top: 2rem;
+  margin-top: 12rem;
   border-top: solid 1px $hr-border-color;
 
   @include large {
