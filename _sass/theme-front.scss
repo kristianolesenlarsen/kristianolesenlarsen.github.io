@@ -98,6 +98,7 @@ a {
 }
 
 .page-header {
+  font-family: "Cormorant SC", serif;
   color: $header-heading-color;
   text-align: center;
 
@@ -117,7 +118,7 @@ a {
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
-  font-weight: 100;
+  font-weight: normal;
 
   @include large {
     font-size: 3.25rem;
