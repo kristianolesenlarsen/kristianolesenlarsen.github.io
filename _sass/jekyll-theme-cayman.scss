@@ -44,6 +44,12 @@ a {
 
 .buttons{
   display: inline-block;
+  direction: rtl;
+  vertical-align: middle;
+}
+
+.overskrift{
+  display: inline-block;
 }
 
 .btn {
