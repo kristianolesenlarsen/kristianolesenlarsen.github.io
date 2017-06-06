@@ -135,7 +135,7 @@ a {
 }
 
 .project-tagline {
-  margin-bottom: 2rem;
+  margin-bottom: 8rem;
   font-weight: normal;
   opacity: 0.7;
 
@@ -330,6 +330,7 @@ a {
 }
 
 .site-footer {
+  vertical-align: bottom;
   padding-top: 2rem;
   margin-top: 12rem;
   border-top: solid 1px $hr-border-color;
