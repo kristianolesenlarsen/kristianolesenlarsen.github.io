@@ -92,10 +92,11 @@ a {
 
 .page-header {
   color: $header-heading-color;
-  text-align: center;
+  text-align: left;
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
-  font-family:  "Roboto", sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
+  font: "Open Sans Condensed", sans-serif;
 
   @include large {
     padding: 5rem 6rem;
@@ -114,7 +115,6 @@ a {
   margin-top: 0;
   margin-bottom: 0.1rem;
   font-weight: 200;
-
   @include large {
     font-size: 3.25rem;
   }

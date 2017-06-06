@@ -98,6 +98,8 @@ a {
 }
 
 .page-header {
+  font-family: "Open Sans Condensed", sans-serif;
+  font: "Open Sans Condensed", sans-serif;
   color: $header-heading-color;
   text-align: center;
 
@@ -329,7 +331,7 @@ a {
 
 .site-footer {
   padding-top: 2rem;
-  margin-top: 2rem;
+  margin-top: 12rem;
   border-top: solid 1px $hr-border-color;
 
   @include large {
