@@ -43,12 +43,11 @@ a {
 }
 
 .buttons{
-  display: inline-block;
-  vertical-align: middle;
+  float:left;
 }
 
 .overskrift{
-  display: inline-block;
+  float: right;
 }
 
 .btn {
