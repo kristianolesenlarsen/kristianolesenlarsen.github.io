@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">{{ page.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.github.project_tagline }}</h2>
-      <a href="{{ site.baseurl }}" class="btn">Hjem</a>
-      <a href="{{ site.baseurl }}/test/" class="btn">Test</a>
+    <div class="buttons">
+      <section class="page-header">
+        <h1 class="project-name">{{ page.title | default: site.github.repository_name }}</h1>
+        <h2 class="project-tagline">{{ page.description | default: site.github.project_tagline }}</h2>
+    </div>
+    <div class = "buttons">
+        <a href="{{ site.baseurl }}" class="btn">Hjem</a>
+        <a href="{{ site.baseurl }}/test/" class="btn">Test</a>
+    </div>
     </section>
 
     <section class="main-content">
