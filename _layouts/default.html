@@ -11,8 +11,10 @@
   </head>
   <body>
     <section class="page-header">
+      <div class="buttons">
       <h1 class="project-name">{{ page.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.github.project_tagline }}</h2>
+      </div>
       <div class="buttons">
       <a href="{{ site.baseurl }}" class="btn">Hjem</a>
       <a href="{{ site.baseurl }}/test/" class="btn">Test</a>
