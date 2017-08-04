@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 title: Hello World
 description: Primarily a container for temporary files i need outside of my home
+=======
+title: Storage for files
+description: and other valuables of mine
+>>>>>>> 6271d37f1e14eb25e324e2dd28233f1b40ef41bd
 show_downloads: false
 google_analytics:
 theme:
