@@ -37,7 +37,8 @@ Når du har lavet en `.py` fil er du klar til at skrive Python kode, start med a
 
 ## 4) Lær Python
 
-### 4.1)
+### 4.1) basics
+
 Python bruger indryk til at signallere kodens hieraki, og kolon til at signalere begyndelsen på et indrykket kodestykke. Prøv for eksempel at køre
 
 ```python
@@ -63,8 +64,7 @@ for i in dictionary:
 Her har vi også anvendt at vi kan subsette datatyper med `[]`, for eksempel er `dictionary['cat'] = 'good'`. Lister kan subsettes efter deres index, så for eksempel er `[10,20,30][0] = 10` og `['a','b','c'][2] = 'c'`.
 
 
-
-### 4.2)
+### 4.2) import og nye pakker
 
 Python kan alt, men de fleste af de ting python kan, ville tage årtier at programmere selv. Derfor komme python med en række pakker, som udvider funtkionaliteten. Start med at prøve pakken `webbrowser`:
 
@@ -82,16 +82,26 @@ import webbrowser as wb
 wb.open('https://google.com')
 ```
 
+Man kan også nøjes med at importere bestemte funktioner ved at skrive
+
+
+```python
+from webbrowser import open
+
+open('https://google.com')
+```
 
 Der findes også en masse pakker der ikke kommer installeret som standard. De kan være lidt besværlige at installere, men de fleste kan fås ved at åbne command-prompten og skrive en af to følgende komandoer
+
 ```
 pip install pakkenavn
 conda install pakkenavn
 ```
-Forsøg for eksempel at installere pakken `requests` med `pip`.
+Forsøg for eksempel at installere pakken `requests` med `pip`. Det kan godt betale sig at læse lidt op på Conda - bl.a. kan Conda nemlig holde styr på de pakker du installerer, og isolere dem i et virtuelt miljø, sådan at du har helt styr på hvilke versioner af forskellige pakker din kode virker med.
 
 
-### 4.3)
+### 4.3) funktioner
+
 Tit skal den samme opgave løses flere gange, det kunne for eksempel være at vi ville lave et program til at hente oplysninger fra statstidende. Så skal vi sandsynligvis gentagende gange kunne generere et link til deres ReST API (google hvad det er). Kodestykker vi vil kunne genbruges kaldes funktioner og defineres med `def`, for eksempel kan vi lave en lommeregner ved at skrive
 
 ```python
@@ -118,3 +128,83 @@ Efter at have defineret vores funktion i Python kan vi kalde den igen og igen [o
 calculator(3,4, 'add')       # returnerer 7
 calculator(3,4,'mult')       # returnerer 12
 ```
+Ligesom `return` er der en række andre nøgleord, som python reserverer, for eksempel `break`, `yield` og `continue` - dem kan man google hvordan virker.
+
+### 4.4) strenge
+
+Et af de dataformater man arbejder mest med er tekst. Det kan være man skal autoudfylde en mail,afgøre om en artikel indeholder et bestemt ord, eller alt muligt andet. I python angives en streng ved at omslutte teksten af enten `''` eller `""` Strenge kan subsettes med [] sådan at det første bogstav er `str[0]` osv, for eksempel er `'ABCDE[2] = 'C'`.
+
+Den nemmeste måde at sammensætte strenge på er med `+`, det virker sådan at `'ABC'+ 'DE' = 'ABCDE'`. Hvis vi kender formattet på en streng, og skal udfylde den med variable kan vi bruge `''.format()`:
+
+```python
+import webbrowser as wb
+
+def search_google(search_term):
+  query = 'https://google.dk/search?q={}'.format(search_term)
+
+  try:
+    wb.open(query)
+
+  except:
+    print("Ooops, couldn't open google to search for '{}'".format(search_term))  
+```
+Her har vi også brugt `try` og `except`, som håndterer kode der _måske_ returnerer en fejl. Hvis vi kalder funktionen, fx med `search_google(bajer)` åbner python en webbrowser og søger på google.
+
+Der er mange flere tricks med strenge, men som med alt andet er det nemmeste at lære det når man får brug for det.
+
+# Klasser
+
+Klasser fungerer lidt lige som funktioner, men en klasse kan indeholde flere funktioner, og er i det hele taget en mere kompliceret struktur. Klasser er en central struktur i 'rigtig' python programmering. Vi kan tænke på klasser som abstraktioner der hånterer de ting der er ens på tværs af klassens medlemmer. Et simpelt eksempel på en klasse kunne være en abstrakt studerende:
+
+```python
+class student():
+
+  def __init__(self, skills, ambitions):
+    self.skills = skills
+    self.ambitions = ambitions
+
+  def study(self, need_beer = True):
+    if self.ambitions > self.skills:
+        if need_beer:
+            print("""I wont study today even though im behind
+            on school, instead i'll go get a drink""")
+            return False
+        else:
+            print("""I'm already studying since my skills
+            don't match my ambitions, and i dont
+            want beer right now""")
+            return True
+    else:
+        print("""I have studied more than i had ambitions to do,
+        i'll get a beer now""")
+        return False
+
+```
+Her er `student()` en klasse, der indeholder en `__init__` funktion, som er en særlig funktion der kun køres første gang klassen kaldes, og en anden funktion `study()` der angiver om den studerende vil læse eller drikke øl.
+
+Vi kan nu definere to studerende:
+
+```python
+Allan = student(skills = 10, ambitions = 3)
+Bob = student(skills = 5, ambitions = 8)
+```
+For at finde ud af om Allan og Bob kan drikke øl sammen skal vi bruge en funktion der tager hver af deres præferencer som input, og som output giver `True` hvis de begge har lyst til at drikke øl:
+
+```python
+def beer_together(student1, student2):
+  if student1 and student2:
+    print('A and B can dring beer together')
+    return True
+  else:
+    print('No beers tonight')
+    return False
+```
+Nu kan vi afgøre om Allan og Bob vil drikke øl sammen på en aften hvor de begge to har lyst til øl, ved at skrive
+
+```python
+does_A_want_beer = Allan.study(need_beer = True)      # returnerer True
+does_B_want_beer = Bob.study(need_beer = True)        # returnerer False
+
+beer _together(does_A_want_beer, does_B_want_beer)    # returnerer False
+```
+Der er altså ingen fælles øl til Allan og Bob den aften.
