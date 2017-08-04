@@ -205,6 +205,6 @@ Nu kan vi afgøre om Allan og Bob vil drikke øl sammen på en aften hvor de beg
 does_A_want_beer = Allan.study(need_beer = True)      # returnerer True
 does_B_want_beer = Bob.study(need_beer = True)        # returnerer False
 
-beer _together(does_A_want_beer, does_B_want_beer)    # returnerer False
+beer_together(does_A_want_beer, does_B_want_beer)    # returnerer False
 ```
 Der er altså ingen fælles øl til Allan og Bob den aften.
