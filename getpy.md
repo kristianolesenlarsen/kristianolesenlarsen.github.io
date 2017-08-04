@@ -9,7 +9,7 @@ layout: default
 Installer MiniConda med python 3.x fra deres [downloadside](https://conda.io/miniconda.html) - conda kan holde styr på din pythoninstallation, og skal bruges til at installere pakker. (Du vil gerne tilføje conda til din system-PATH, selvom de fraråder det)
 
 ## 2) Installer Atom
-Installer Atom fra deres [hjemmeside](http://atom.io/)
+Installer Atom fra deres [hjemmeside](http://atom.io/).
 
 ### 2.1)
 Atom skal bruge en python-pakke der hedder `jupyter` og en Atom pakke der hedder `Hydrogen` for at køre python kode, start med at installere jupyter ved at åbne command-prompten (kør: cmd) og skriv
@@ -22,7 +22,7 @@ pip3 install jupyter
 Åben derefter Atom og vælg file > settings > install og søg efter 'Hydrogen', det skulle gerne se således ud:
 ![](hydr.png)
 
-Det kan også anbefales at installere pakkerne `minimap` og `file-icons`, samt at ændre temaet fra mørkt til lyst.
+Det kan også anbefales at installere pakkerne `minimap` og `file-icons`i Atom, samt at ændre temaet fra mørkt til lyst.
 
 
 ## 3) Test at alt virker
@@ -52,10 +52,10 @@ for letter in 'string':
   print(letter)
 ```
 
-Eller dictionaries, som har formattet
+Eller dictionaries:
 
 ```python
-dictionary = {'cat':'good', 'dog': 'evil'}
+dictionary = {'cat': 'good', 'dog': 'evil'}
 for i in dictionary:
     print(i + "'s are " + dictionary[i])
 ```
@@ -73,7 +73,15 @@ import webbrowser
 
 webbrowser.open('https://google.com')
 ```
-De funktioner en pakke indeholder kaldes _methods_ og tilgås med punktum. For at vide hvad en pakke indeholder af funktionalitet er det som regel nødvendigt at google sig frem.
+De funktioner en pakke indeholder kaldes _methods_ og tilgås med punktum. For at vide hvad en pakke indeholder af funktionalitet er det som regel nødvendigt at google sig frem. For at undgå at skrive for meget, er det normalt at forkorte pakkernes navne når man importerer dem:
+
+
+```python
+import webbrowser as wb
+
+wb.open('https://google.com')
+```
+
 
 Der findes også en masse pakker der ikke kommer installeret som standard. De kan være lidt besværlige at installere, men de fleste kan fås ved at åbne command-prompten og skrive en af to følgende komandoer
 ```
