@@ -192,7 +192,7 @@ For at finde ud af om Allan og Bob kan drikke øl sammen skal vi bruge en funkti
 
 ```python
 def beer_together(student1, student2):
-  if student1 and student2:
+  if not student1 and not student2:   #husk student.study() er true hvis den studerende IKKE vil drikke øl
     print('A and B can dring beer together')
     return True
   else:
