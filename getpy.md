@@ -112,7 +112,7 @@ def calculator(a,b, operation = 'add'):
 
 Funktionen `calculator` tager tre inputs, `a`, `b` og variablen `operation`, som har `add` som default indstilling. Bemærk at der bruget et lig-med-tegn (=) til at definere værdien af en variable, mens to lig-med-tegn (==) tester om det passer at to størrelser er lig hinanden (`3==3` returnerer `True`, mens `3==4` returnerer `False`).
 
-Efter at have defineret vores funktion i Python kan vi kalde den igen og igen
+Efter at have defineret vores funktion i Python kan vi kalde den igen og igen [og...](https://www.youtube.com/watch?v=SMaVOcLHygE)
 
 ```python
 calculator(3,4, 'add')       # returnerer 7
