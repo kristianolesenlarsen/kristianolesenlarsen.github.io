@@ -208,3 +208,45 @@ does_B_want_beer = Bob.study(need_beer = True)        # returnerer False
 beer_together(does_A_want_beer, does_B_want_beer)    # returnerer False
 ```
 Der er altså ingen fælles øl til Allan og Bob den aften.
+
+## Klasser forsat
+
+Tidligere lavede vi en funktion der fungerede som simpel lommeregner, men vi kunne forestille os en situation hvor det var upraktisk at skulle kalde funktionen igen og igen, for at skifte mellem plus og minus. Til det kan vi bruge klasser, vi begynder med at definere en meget simpelt lommeregnerfunktion:
+
+```python
+def calculator(a, b):
+    return calcinternals(a, b)
+```
+
+Hvis vi kører denne funktion får vi en fejl, fordi `calcinternals` ikke er defineret - lad os lave en klasse med det navn:
+
+```python
+class calcinternals():
+    def __init__(self, a, b):
+        self.A = a
+        self.B = b
+
+    @property
+    def sum(self):
+        return self.A + self.B
+
+    @property
+    def difference(self):
+        return self.A - self.B
+
+    @property
+    def product(self):
+        return self.A * self.B
+
+    @property
+    def fraction(self):
+        return self.A / self.B
+```
+Den nye klasse har en række `@property` definitioner - det er som navnet antyder properties. Nu returnerer `calculator` ikke et tal, men en _instance_ af klassen `calcinternals`. Vi kan tilgå de forskellige resultater på følgende måde:
+
+```python
+x = calculator(3,4)
+
+x.sum         # returnerer 7
+x.product     # returnerer 12
+```
