@@ -5,9 +5,9 @@ layout: default
 # Adv.Microeconometrics Workshop
 [slides](files/workshop.pdf)
 
-[draft](filer/main.pdf)
+[draft](files/main.pdf)
 
 
 
 # getpy guide
-[getpy](getpy/)
+[getpy](getpy)
