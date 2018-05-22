@@ -2,5 +2,7 @@
 layout: default
 ---
 
-# Slides til SUF's ledelse
-[IOslides](slidedeck.html).
+# Adv.Microeconometrics Workshop
+[slides](files/workshop.pdf)
+
+[draft paper](filer/main.pdf)
