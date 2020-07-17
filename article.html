@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <!-- 
     Build upon the website of Sebastian Barfort, 
     https://github.com/sebastianbarfort
@@ -29,130 +29,54 @@
                         }
 });
 </script>
-<style>
-:root {
-    --hover_color:rgb(0, 36, 71);
-}
-body { 
-    /*box-sizing:border-box; margin:0; height:100%; width:100%; background-size:100px 100px;
-    background-image: repeating-linear-gradient(0deg, transparent, transparent 99px, #ccc 99px, #ccc 100px), 
-    repeating-linear-gradient(-90deg, transparent, transparent 99px, #ccc 99px, #ccc 100px); */
-    margin: 28px auto;
-    max-width: 45.5em;
-    padding: 14px;
-    font: 20px  'EB Garamond', serif;
-    color: #333;
-  }
-  p, h1{
-    margin: 0 0 21px 0;
-    white-space: pre-wrap;
-    text-align:justify;
-    text-justify: newspaper;
-  }
-  
-  h1 {
-    font-weight: bold;
-    text-align:center;
-  }
-  
-  h2 {
-    white-space: pre-wrap;
-    font-weight: bold;
-    text-align:left; 
-    font-size: 20pt;
-  }
-.author{
-    text-align: center;
-    color:var(--hover_color);
-}
+<link rel="stylesheet" type="text/css" href="article.css">
 
-.citation{
-    display: inline;
-    color:var(--hover_color);
-}
-.popover-header {
-    font-size: 15px;
-}
-.popover-body {
-    font-size: 10px;
-    color: #333;
-}
-.popover {
-  margin: 4px 121px 0 5px;
-}
-nav[data-toggle="toc"] {
-  top: 302px;
-}
-
-/* small screens */
-@media (max-width: 768px) {
-  /* override stickyness so that the navigation does not follow scrolling */
-  nav[data-toggle="toc"] {
-    margin-bottom: 42px;
-    position: static;
-  }
-
-  /* PICK ONE */
-  /* don't expand nested items, which pushes down the rest of the page when navigating */
-  nav[data-toggle="toc"] .nav .active .nav {
-    display: none;
-  }
-  /* alternatively, if you *do* want the second-level navigation to be shown (as seen on this page on mobile), use this */
-  /*
-  nav[data-toggle='toc'] .nav .nav {
-    display: block;
-  }
-  */
-}
-</style>
-<title>Kristian Urup Olesen Larsen</title>
+<title>RL for DP</title>
 
 <main>
 <body data-spy="scroll" data-target="#toc">    
-<div class="container">
+<div class="container">  
     <div class="row">
-        <!-- sidebar, which will move to the top on a small screen -->
-        <div class="col-sm-3">
-        <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
-        </div>
+      <!-- sidebar, which will move to the top on a small screen -->
+    <div class="col-sm-3">
+      <nav id="toc" data-toggle="toc" class="sticky-top">Table of Contents</nav>
+    </div>
         <!-- main content area -->
-        <div class="col-sm-9">
+        <div class="col-sm-6">
 
 <h1> Solving dynamic programming models using methods from reinforcement learning </h1>
+
+<div class="authors">
+  <div class="author">Joachim Kahr Rasmussen
+    <div class="affil"> CEBI, University of Copenhagen. jkr@econ.ku.dk      
+    </div>
+  </div>
+  <div class="author">Kristian Urup Olesen Larsen
+    <div class="affil"> CEBI, University of Copenhagen. kuol@econ.ku.dk      
+    </div>
+  </div>
+</div>
+
+<!--
 <p class="author" data-toggle="tooltip" data-placement="right" data-popover="true" 
     data-html=true data-content="<a href='http://www.econ.ku.dk/cebi' target='blank' >CEBI, University of Copenhagen.</a> jkr@econ.ku.dk"> Joachim Kahr Rasmussen</p>
 <p class="author" data-toggle="tooltip" data-placement="right" data-popover="true" 
 data-html=true data-content="<a href='http://www.econ.ku.dk/cebi' target='blank' >CEBI, University of Copenhagen.</a> kuol@econ.ku.dk"> Kristian Urup Olesen Larsen</p>
+-->
 
-<script>
-var originalLeave = $.fn.popover.Constructor.prototype.leave;
-$.fn.popover.Constructor.prototype.leave = function(obj){
-  var self = obj instanceof this.constructor ?
-    obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type)
-  var container, timeout;
-
-  originalLeave.call(this, obj);
-
-  if(obj.currentTarget) {
-    container = $(obj.currentTarget).siblings('.popover')
-    timeout = self.timeout;
-    container.one('mouseenter', function(){
-      clearTimeout(timeout);
-      container.one('mouseleave', function(){
-        $.fn.popover.Constructor.prototype.leave.call(self, self);
-      });
-    })
-  }
-};
-
-$('body').popover({ selector: '[data-popover]', trigger: 'click hover', delay: {show: 30, hide: 400}});
-</script>
+<div class="abstract">
+  <p>
+  In this paper, we assess the applicability of reinforcement learning in approximating solutions to certain types of dynamic stochastic control problems known from the economic literature. In particular, we direct our attention to problems where the state and/or action space is large and potentially continuous - problems that have shown to be challenging to solve with classic approaches from dynamic programming. In order to illustrate how different classes of algorithms know from reinforcement learning can be applied to approximate solutions to dynamic economic models, we first use a simple Q-learner to solve a moderately large cake-eating problem with discrete states and a finite time horizon. We show that for a relatively low approximation error, the problem can be solved fast with reinforcement learning relative to standard backwards induction. Furthermore, we highlight the importance of the initial guess of action-values and the existence of discontinuities for the performance of the algorithm. With these results in hand, we turn our attention to another class of algorithms from reinforcement learning, Deep Q-Networks, that handle models where the state space is continuous. In order to assess the performance of the algorithm, we evaluate it on a set of infinite horizon engine replacement models when the state and action space are first one-dimensional and then multidimensional. Finally, we discuss the applicability of Deep Deterministic Policy Gradients for models where the both states and actions are continuous.
+  </p>
+</div>
 
 <p>In this section, we go into greater detail with the prospects for using reinforcement learning to augment more traditional techniques from dynamic programming toolbox in solving stochastic control problems in discrete time. However, before we do so, it is instructive to show that - despite a different terminology - the fundamental idea of reinforcement learning is to solve a problem much similar to those that we typically consider in economic dynamic programming models.</p>
 
 <h2>Stochastic Control Problems and Terminology</h2>
-<p>In economic models of dynamic programming, we usually use a value function (or a Bellman Optimality Equation) in order to characterize the solution to Markovian Decision Process (MDP, henceforth) - a class of stochastic control problems in discrete time where an agent optimizes an objective function subject to uncertainty, and outcomes are only in part determined by the agent\footnote{An underlying assumption for MDP's is that the state captures all information about the past economy that is relevant for the future - this is the so-called Markov property <span class="citation" data-toggle="tooltip" data-placement="bottom" data-popover="true" 
-    data-html=true data-content="Richard S. Sutton and Andrew G. Barto. Reinforcement learning: An introduction. pages 53-82. A Bradford Book, The MIT Press, 2014. <a href='https://doi.org/10.1007/s10479-012-1077-6' target='blank' >https://doi.org/10.1007/s10479-012-1077-6</a>">(Sutton et al, 2014)</span>.</p>
+<p>In economic models of dynamic programming, we usually use a value function (or a Bellman Optimality Equation) in order to characterize the solution to Markovian Decision Process (MDP, henceforth) - a class of stochastic control problems in discrete time where an agent optimizes an objective function subject to uncertainty, and outcomes are only in part determined by the agent.<label class="sidenote-counter"></label> <span class="sidenote">An underlying assumption for MDP's is that the state captures all information about the past economy that is relevant for the future - this is the so-called Markov property <span class="citation" data-toggle="tooltip" data-placement="bottom" data-popover="true" 
+    data-html=true data-content="Richard S. Sutton and Andrew G. Barto. Reinforcement learning: An introduction. pages 53-82. A Bradford Book, The MIT Press, 2014. <a href='https://doi.org/10.1007/s10479-012-1077-6' target='blank' >https://doi.org/10.1007/s10479-012-1077-6</a>">(Sutton et al, 2014)</span>
+</span>
+</p>
 
 <p>With reference to  <span class="citation" data-toggle="tooltip" data-placement="bottom" data-popover="true" 
     data-html=true data-content="Fedor Iskhakov, Thomas H. Jørgensen, John Rust, and Bertel Schjerning. The endogenous grid methodfor discrete-continuous dynamic choice models with (or without) taste shocks. Quantitative Economics, 8(2):317-365, 2017. doi:10.3982/QE643. <a href='https://onlinelibrary.wiley.com/doi/abs/10.3982/QE643' target='blank' >https://onlinelibrary.wiley.com/doi/abs/10.3982/QE643</a>">(Ishakov et al, 2017)</span>, we may summarize a stylized version of an MDP in Dynamic Programming in the following way:</p>
@@ -161,7 +85,7 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', delay: {
     <li>Based on this observation, the agent chooses a decision or action, $a\in\mathcal{A}\left(s\right)$, where $a$ is also potentially high-dimensional such that $\mathcal{A}\left(s\right)\subseteq\mathbb{R}^n$.</li>
     <li>When an action is made, the agent earns instantaneous utility, $u\left(a_t,s_t\right)$, where $u: \mathcal{A}\left(s\right)\times \mathcal{S}\rightarrow \mathbb{R}$.</li>
     <li>Eventually, the state for period $t+1$, $s_{t+1}$, is drawn with transition probability $p\left(s_{t+1}\mid s_t,a_t\right)$.</li>
-  </ul> 
+</ul>
 <p>Note that if $T$ is finite, we can in principle think of $t$ as being part of the state, where it evolves deterministically between periods.</p>
 
 <p>The objective of the agent is to choose a sequence of actions subject to the economic environment (i.e. the transition of states) such that expected intertemporal (discounted) utility</p>
@@ -175,13 +99,19 @@ V\left(s_{t}\right) &=\underset{\Pi_t}{\text{sup}}\text{ }E\left[\sum_{k=0}^{T}\
 \end{align}
 
 <p>where $\Pi_t=(a_t,a_{t+1},...)$ is a sequence of actions satisfying the constraints of the model. When the time horizon is infinite, this can be written in recursive form as a Bellman equation. Equivalently, we may define the action-value function as the value of choosing some (potentially suboptimal) decision $a_t$ conditional on future optimal behavior:</p> 
+
 \begin{equation}\label{Q1}
     Q\left(a_t,s_t\right)=u\left(a_t,s_t\right)+\beta\int V\left(s_{t+1}\right)p\left(s_{t+1}\mid a_{t},s_{t}\right)\text{d}s_{t+1}
 \end{equation}
+
 <p>This 'type' of value-function, however, is more frequently used in the RL-literature than what is the case in the DP literature. In the next sections, it will be clearer why.</p>
  
-<p>In turn, a prominent aim in dynamic programming problems is to characterize the policy function $a_t^*\left(s_t\right)$ that characterizes the optimal set of actions conditional on the state - that is, the action $a_t\in\mathcal{A}\left(s_t\right)$ that is compatible with \eqref{value101}. We may write this as: $$a_t^*(s_t):=\underset{a_t\in\mathcal{A}\left(s_t\right)}{\text{arg max}}\text{ }Q\left(s_t,a_t\right)$$
-Similar to economic models of dynamic programming, the purpose of an agent within the reinforcement learning-framework is to choose actions that are compatible with the constraints of some dynamic model in order to maximize some objective. Yet, both the terminology and the timing of the frameworks are somewhat different.  \citet{sutton_2014} refers to MDP's as a general framework for studying a wide range of problems that have been subject to RL-algorithms. Their description generally follows the structure above, but their terminology differs slightly.</p> 
+<p>In turn, a prominent aim in dynamic programming problems is to characterize the policy function $a_t^*\left(s_t\right)$ that characterizes the optimal set of actions conditional on the state - that is, the action $a_t\in\mathcal{A}\left(s_t\right)$ that is compatible with \eqref{value101}. We may write this as: 
+\begin{equation}
+a_t^*(s_t):=\underset{a_t\in\mathcal{A}\left(s_t\right)}{\text{arg max}}\text{ }Q\left(s_t,a_t\right)
+\end{equation}
+Similar to economic models of dynamic programming, the purpose of an agent within the reinforcement learning-framework is to choose actions that are compatible with the constraints of some dynamic model in order to maximize some objective. Yet, both the terminology and the timing of the frameworks are somewhat different.  <span class="citation" data-toggle="tooltip" data-placement="bottom" data-popover="true" 
+data-html=true data-content="Richard S. Sutton and Andrew G. Barto. Reinforcement learning: An introduction. pages 53-82. A Bradford Book, The MIT Press, 2014. <a href='https://doi.org/10.1007/s10479-012-1077-6' target='blank' >https://doi.org/10.1007/s10479-012-1077-6</a>">Sutton et al, (2014)</span> refers to MDP's as a general framework for studying a wide range of problems that have been subject to RL-algorithms. Their description generally follows the structure above, but their terminology differs slightly.</p> 
 
 <p>In particular, within the RL-literature, the objective function of the problem - what is often modeled as intertemporal utility in economic models - is generally referred to as a goal, $G$, while the instantaneous utility is instead referred to as a reward, $r$. While economic DP models often model utility as some (likely smooth and monotone) function of an action (e.g. consumption) and potentially a state (e.g. age, retirement or children), a reward is a similar concept that reflects the success of an agent (e.g. winning a video game, opening a door with a robot arm, etc.) that generally needs no smoothness. Equivalently, while discounting in economic MDP's that are subject to DP reflects the time-preferences of an economic agent, discounting in classic MDP's subject to RL is a slightly broader concept reflecting e.g. the relative value of winning a video game faster (or losing in more time) or opening a door with a robot arm in fewer attempts.</p>
  
@@ -216,9 +146,35 @@ where $s'$ is the realized state from taking action $a$ in state $s$, $r$ is the
 
 <p>In particular, we find that deep RL models have both advantages and disadvantages over the traditional methods from dynamic programming. By using a neural network to approximate the value function, interpolation becomes an intrinsic part of the estimation procedure, and attention is automatically given to those areas of state space where realizations are likely to be found. Compared to DP, this takes some control out of the researchers hands - arguably a beneficial consequence since the model will itself take care of interpolation where necessary, and ignore it where unnecessary. However, we also find that the potentially significant approximation error that can arise due to insufficient training or poor choices of model architecture is consequence of the approach that will in some cases render RL inappropriate as a tool. Whether this error exceeds the one derived from interpolation between grid points will be case specific.</p>
 </div>
+<div class="col-sm-3"></div>
 </div>
 </div>
 
 </main>
 </body>
+
+<script>
+  var originalLeave = $.fn.popover.Constructor.prototype.leave;
+  $.fn.popover.Constructor.prototype.leave = function(obj){
+    var self = obj instanceof this.constructor ?
+      obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type)
+    var container, timeout;
+  
+    originalLeave.call(this, obj);
+  
+    if(obj.currentTarget) {
+      container = $(obj.currentTarget).siblings('.popover')
+      timeout = self.timeout;
+      container.one('mouseenter', function(){
+        clearTimeout(timeout);
+        container.one('mouseleave', function(){
+          $.fn.popover.Constructor.prototype.leave.call(self, self);
+        });
+      })
+    }
+  };
+  
+  $(document).popover({ selector: '[data-popover]', trigger: 'hover click', delay: {show: 30, hide: 400}});
+  </script>
+  
 </html>
