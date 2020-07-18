@@ -6,19 +6,18 @@
 <html lang="en-US">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap" rel="stylesheet"> 
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<!-- Mathjax -->
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+<!-- Bootstrap -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-<link
-  rel="stylesheet"
-  href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
-/>
-<!-- add after bootstrap.min.js -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
 <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
 
 <script type="text/x-mathjax-config">
@@ -26,17 +25,89 @@
                         TeX: { 
                             equationNumbers: {  autoNumber: "AMS"  },
                             extensions: ["AMSmath.js"]
-                        }
+                        },
+                        "SVG": {linebreaks: { automatic: true }},
+                        CommonHTML: { linebreaks: { automatic: true } },
+                        "HTML-CSS": { linebreaks: { automatic: true } }                        
 });
 </script>
-<link rel="stylesheet" type="text/css" href="article.css">
 
-<title>RL for DP</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="article.css">
+<title>Test document</title>
+
 
 <main>
 <body data-spy="scroll" data-target="#toc">    
-<div class="container">  
-    <div class="row">
+
+  <div id="litterature" style="display:none"> 
+    <div id="athey_recursive_2016" 
+          class="autocitation" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-popover="true" 
+          data-html=true 
+          data-content="Athey, Susan and Guido Imbens. “Recursive partitioning for heterogeneouscausal effects”.Proceedings of the National Academy of Sciences of the UnitedStates of America113.27 (5 July 2016): 7353-7360. Print.">
+    </div>       
+    <div id="wager_2018" 
+          class="autocitation" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-popover="true" 
+          data-html=true 
+          data-content="Wager, Stefan and Susan Athey. “Estimation and Inference of HeterogeneousTreatment Effects using Random Forests”.Journal of the American StatisticalAssociation113.523 (3 July 2018): 1228-1242. Print.Page 12">
+    </div>      
+    <div id="athey_generalized_2016" 
+          class="autocitation" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-popover="true" 
+          data-html=true 
+          data-content="Athey, Susan, Julie Tibshirani and Stefan Wager. “Generalized Random Forests”.arXiv:1610.01271[econ, stat](5 Oct. 2016) 10/10/2019 <a href='https://arxiv.org/abs/1610.01271' target='blank' >https://arxiv.org/abs/1610.01271</a>">
+    </div>      
+    <div id="jls_1993"
+          class="autocitation" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-popover="true" 
+          data-html=true 
+          data-content="Jacobson, Louis S., et al. “Earnings Losses of Displaced Workers”.The American Economic Review 83.4 (1993): 685-709. Print. <a href=' https://www.jstor.org/stable/2117574' target='blank' > https://www.jstor.org/stable/2117574</a>">
+    </div>    
+    <div id="michaud_sullivan_ost"
+          class="autocitation" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-popover="true" 
+          data-html=true 
+          data-content="Michaud, Pierre-Carl, et al. “The effect of job loss on health: Evidence frombiomarkers”.Labour  EconomicsSOLE/EALE  conference  issue  2015  41(1 Aug. 2016): 194-203. Print. <a href=' https://www.sciencedirect.com/science/article/abs/pii/S0927537116300288' target='blank' > https://www.sciencedirect.com/science/article/abs/pii/S0927537116300288</a>
+          </br></br>
+          Ost, Ben and Pan, Weixiang and Webber, Douglas A. “The Impact of Mass Layoffs on the Educational Investments of Working College Students”.Institute of Labor Economics (IZA), 2016.
+          </br></br>
+          Sullivan, Daniel and Till von Wachter. “Job Displacement and Mortality: An Analysis Using Administrative Data”. The Quarterly Journal of Economics124.3 (1 Aug. 2009): 1265-1306. Print.">
+    </div>
+    <div id="ruhm_1991"
+          class="autocitation" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-popover="true" 
+          data-html=true 
+          data-content="Ruhm, Christopher J. “Are Workers Permanently Scarred by Job Displace-ments?”The American Economic Review81.1 (1991): 319-324. Print.">
+    </div>        
+    <div id="hummels_2012"
+          class="autocitation" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-popover="true" 
+          data-html=true 
+          data-content="Hummels, David, et al. “Offshoring, Transition, and Training: Evidence fromDanish Matched Worker-Firm Data”.American Economic Review102.3 (May2012): 424-428. Print.">
+    </div>            
+  </div>
+  
+
+<div class="container">    
+  <div class="row">
       <!-- sidebar, which will move to the top on a small screen -->
     <div class="col-sm-3">
       <nav id="toc" data-toggle="toc" class="sticky-top">Table of Contents</nav>
@@ -44,44 +115,347 @@
         <!-- main content area -->
         <div class="col-sm-6">
 
-<h1> Estimating heterogeneity in the severity of unemployment shocks using generalized random forests </h1>
+        <h1> Estimating heterogeneity in the severity of unemployment shocks using generalized random forests </h1>
 
-<div class="authors">
-  <div class="author">Kristian Urup Olesen Larsen
-    <div class="affil"> CEBI, University of Copenhagen. kuol@econ.ku.dk      
-    </div>
+        <div class="authors">
+          <div class="author">Kristian Urup Olesen Larsen
+            <div class="affil">CEBI, University of Copenhagen. kuol@econ.ku.dk</div>
+          </div>
+        </div>
+
+        <div class="abstract">
+          <p>
+            I use the causal forest model proposed by <cite id="athey_generalized_2016">Athey et al. (2016)</cite> to estimate heterogeneity in earnings losses due to sudden unemployment. I find large and persistent mean effects but also substantial heterogeneity across individuals. On average individuals loose about 20% of their potential earnings in the first year after separation but some loose amounts significantly larger than this. After 10 years separators are still worse of than their staying counterparts but a fraction will also have surpassed their peers in terms of earnings. Those who suffer large initial losses are slow at catching up and can as such expect much larger lifetime losses than the separators with small initial losses. 
+          </p>
+        </div>
+
+        <p>There is a large existing literature on displacement and unemployment in economics. Most known is probably <cite id="jls_1993">JLS (1993)</cite> who use an event study to compare earnings of laid of workers to their staying counterparts. More recently focus has shifted from the purely economic consequences of unemployment to also cover questions about e.g. health and educational attainment <cite id="michaud_sullivan_ost">(Michaud et al., 2016; Sullivan and Wachter, 2009; Ost et al., 2016)</cite>.
+        A large and economically significant scaring effect have been documented in the earnings of separated workers <cite id="ruhm_1991">(Ruhm, 1991)</cite> but little is known about the distributions of these effects across separators. </p>
+
+        <p>In this paper I contribute to the literature on earnings losses by augmenting the classic study by <cite id="jls_1993">Jacobson et al.</cite> with modern methods for individual treatment effect estimation developed by <cite id="athey_generalized_2016">Athey, Tibshirani, et al. (2016)</cite>. I show simulation results that suggest the causal forest can validly be applied for inference in event-studies and subsequently find large and persistent heterogeneity in the earnings losses due to displacement. I find clear evidence on the negative consequences of displacement but also show that 10 years after being fired a substantial proportion of the displaced have positive treatment effect indicating they have at that point surpassed their control group in terms of earnings. Importantly I also show that earnings losses are not only persistent in the time dimension, but also in terms of within-distribution position. An individual with estimated losses in the first quintile will on average only be in the second quintile 15 years later.</p>
+        
+        <h1>Methods</h1>
+        <p>To learn about about the differential effects of unemployment two key statistical issues arise. First, the natural comparison to make for a separated worker is to the counterfactual case of what would happen had the worker not separated from his or hers firm. I.e. the treatment effect $\tau$ is unobservable. This is a standard issue in econometrics and is typically solved by (quasi-)randomization. In expectation random selection of separators will imply that stayers and separators are identical in any confounding covariates and an unbiased estimate for the counterfactual outcome of separators can be derived from the group of stayers. An estimate of the average treatment effect can then simply be calculated as a difference in means, $\hat{\tau}=\hat{\mu}_{(T=1)} - \hat{\mu}_{(T=0)}$ - perhaps controlling for additional variables to improve accuracy. Standard regression methods typically estimate this quantity as one of their parameters.</p>
+
+        <p>In the case where researchers are interested in grouped or individual treatment effects $\tau(x)$ a second issue arise. In particular it is then necessary to ask <i>who</i> in the stayer group is a valid comparison for each of the separators. In cases where the feature space $\mathcal{X}$ is sufficiently small (e.g. when $\mathcal{X}=\{0,1\}$) this problem can be trivially solved by letting the control group for individual $i$ be those untreated individuals $j$ for which $x_j = x_i$. (Quasi-)randomization then once again ensures that comparisons are valid. When $\mathcal{X}$ is large, which is common in economics (a single continuous variable for instance gives $\mathcal{X}$ infinitely many elements) identifying the correct controls for individual $i$ becomes more difficult. In this case the problem is one of optimally partitioning (or weighting) $\mathcal{X}$ for subpopulation treatment effects. In addition to this, heuristics that iteratively search $\mathcal{X}$ for subpopulations with high effects risks a multiple testing bias that can lead to reporting of spuriously extreme effects as representative of true heterogeneity <cite id="wager_2018">(Wager and Athey, 2018)</cite>.</p>
+
+        <p><cite id="athey_recursive_2016">Athey and Imbens (2016)</cite> use a single decision tree to appropriately partition a dataset. They propose an approach of honest estimation to get unbiased within-leaf estimates of both the mean and standard deviation on dataset labels $y_i$. This allows them to compare treated and control observations within each leaf and validly compute estimated treatment effects and confidence bands within each leaf of the tree. <cite id="wager_2018">(Wager and Athey, 2018)</cite> extend this approach to random forest models by building forests of honest trees. <cite id="athey_generalized_2016"></cite> builds on these insights but use forests as adaptive nearest neighbor estimators instead of directly using the leaf estimates.</p>
+
+        <p>Common to these methods is that they develop machine learning models that inherit the flexibility from the standard predictive models but are augmented to achieve asymptotic properties (e.g. of normality, consistency) of the estimates. In the standard machine learning case of generating label predictions $\hat{y}_i$ these properties are not required for model evaluation because the ground truth $y_i$ is observed. Researchers can split the available data into subsamples $X_{tr}, X_{te}$ and construct models $\hat{m}(x_i | X_{tr}): x_i \mapsto \hat{y}_i$ on the training data. Under the assumption of independence of observations a performance metric $d(y, \hat{y})$ applied to the testing data $d(\hat{m}(x_i\in X_{te}), y_i \in X_{te})$ then gives an unbiased estimate of the models generalization error along this metric.
+        In the case of treatment effect estimation this approach becomes infeasible as no ground truth of $\tau_i$ is observed. In this situation both classical econometrics and machine learning must rely on asymptotic properties of the models to provide any guarantees on the models ability to identify true signals in the data.</p>
+
+        <p>In this paper I employ the <i>generalized random forest</i> estimators developed by <cite id="athey_generalized_2016">Athey et al. (2016)</cite>. The framework developed by the authors is a generalization of random forests that achieve flexibility by phrasing the estimation problem as one of identifying some quantity of interest $\theta(x)$ through local moment conditions. In particular by observing that random forests can be viewed as a way to generate weighting schemes $\alpha_i(x)$ that measure relevance of training observation $i$ for estimating the quantity of interest $\theta(x)$ around $x$, the authors modify the random forest algorithm to produce estimates $\hat{\theta}(x)$ that solve</p> 
+        \begin{equation}
+          \mathbb{E}[\psi_{\theta(x), \nu(x)}(O_i)|X_i = x] = 0, \quad \forall x\in\mathcal{X}
+        \end{equation}
+        <p>by considering $\theta, \nu$ as fixed locally in each parent leaf and then locally weighted with $\alpha_i(x)$ in the final cross-tree aggregated estimate. To do this they let each tree $b=1,2,...,B$ split the parent $P$ into children $C_1,C_2$ according to a gradient estimated criterion</p> 
+        \begin{equation}
+          \tilde{\Delta}(C_1,C_2) = \sum_{j=1,2} \frac{1}{|\{X_i \in C_j\}|} \left(\sum_{i:X_i \in C_j}\rho_i \right)^2
+        \end{equation}
+        <p>where $\rho_i$ is an estimation-specific pseudo-outcome (see  <cite id="athey_generalized_2016">Athey et al. (2016)</cite> for details). The benefit of using this approximate criterion is that it moves the majority of computation into producing pseudo-outcomes $\rho_i$ which is only done once per parent node in the tree building phase.</p>
+
+        <p>The idea is then that each tree $b$ will provide a noisy estimate of $\theta(x)$ within neighborhoods of $x$. Parallel to the approach in standard random forests aggregation across threes should then yield stable estimates of $\hat{\theta}(x)$. This method is shown by <cite id="athey_generalized_2016">Athey et al. (2016)</cite> to provide consistent and gaussian estimates of $\theta(x)$.</p>
+        
+        <h2>Simulation results</h2>
+        <p>In my application I use the causal forest to estimate event-study regressions in a panel of workers. To my knowledge this is the first time the causal forest is used in such a setup and as such I want to assess in advance the performance of the model on simulated data. My main concerns are with making sure that the model fits well on the per-$t$ means and that the point estimates of individual treatment effects (ITE) are close to the true treatment effects. In the following I simulate a panel of 1000 individuals over $t\in\{-25,-24,...,0,...,25\}$ periods. I assign a simulated treatment year $t_0 \in\{-10,-9,...,0,...,10\}$ to mimic filtering data on observations being observed both before and after an event. In my setup each individual is associated with one of 10 firms with fixed effects $\delta_f$ there are also individual fixed effects $\delta_i$ - both are drawn uniformly from $[50,80]$.\footnote{This interval is selected only to ensure that all realizations of $y_{it}$ are positive.} There are $p=2$ covariates in $X_i$ and the outcome $y_{it}$ is determined according to</p>
+        \begin{equation}
+          y_{it} = \delta_f + \delta_i + \omega \cdot t + 1_{(\Delta t > 0)} \cdot T_i \cdot \tau(\Delta t, x) + X_{it}\beta + \epsilon_{it}
+        \end{equation}
+        <p>where $T_i$ is a treatment dummy which is activated for half of the individuals, $\Delta t = t - t_0$ and $\epsilon_{it} \sim \mathcal{N}(0, \sigma_\epsilon)$. $\omega \cdot t$ is a linear time trend. The treatment effect $\tau$ I define as</p>
+        \begin{equation}
+          \tau_i(\Delta t_i, X_i) = a_i \Delta t - b_i, \quad a_i = a(X_{i1}^{\Delta t = -1}), \ b_i = b(X_{i2}^t, X_{i2}^{\Delta t = -1})
+        \end{equation}
+        <p>where $a, b$ are monotone functions and $X_i$ drives the heterogeneous treatment effects through the slope $a_i$ and through the level $b_i$. This implies agents are heterogeneous in their initial drop in $y_{it}$ if treated as well as in the path their treatment effects follows in subsequent time steps. In this situation the treatment effects drift to become positive over time, but this is not an issue for the simulation.</p>
+        <div id="figwrap">
+        <div id="figure_2" style="display:inline-block"></div>
+        <div id="figure_1" style="display:inline-block"></div>        
+        </div>
+        <script>
+        var w = document.getElementById("figwrap").offsetWidth * 0.9;
+//        var w = screen.width;
+                  // set the dimensions and margins of the graph
+        var margin = {top: 10, right: 0, bottom: 50, left: 60},
+            width = w/2 - margin.left - margin.right,
+            height = 400/2 - margin.top - margin.bottom;
+
+        // append the svg object to the body of the page
+        var svg = d3.select("#figure_1")
+          .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .attr("margin", "auto")
+          .append("g")
+            .attr("transform",
+                  "translate(" + margin.left + "," + margin.top + ")");
+
+        //Read the data
+        d3.csv("data/plot2.csv", function(data) {
+
+            // Add X axis --> it is a date format
+            var x = d3.scaleLinear()
+              .domain([-35,35])
+              .range([ 0, width ]);
+            svg.append("g")
+              .attr("transform", "translate(0," + height + ")")
+              .attr("class", "axis")              
+              .call(d3.axisBottom(x)
+                  .ticks(5));
+
+            // text label for the x axis
+            svg.append("text")
+                .attr("transform",
+                      "translate(" + (width/2) + " ," + 
+                                    (height + margin.top + 25) + ")")
+                .style("text-anchor", "middle")
+                .style("font-size", "14px")
+                .text("Time to promotion")              
+            // Add Y axis
+            var y = d3.scaleLinear()
+              .domain([-50, 50])
+              .range([ height, 0 ]);
+            svg.append("g")
+            .attr("class", "axis")              
+            .call(d3.axisLeft(y)
+                  .ticks(5));
+
+            // text label for the y axis
+            svg.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("y", 0 - margin.left)
+                .attr("x",0 - (height / 2))
+                .attr("dy", "2.5em")
+                .style("text-anchor", "middle")
+                .style("font-size", "14px")
+                .text("Value");
+
+            // TRUE EFFECTS
+            svg
+              .append("path")
+              .datum(data)
+              .attr("fill", "none")
+              .attr("stroke", "#00B945")
+              .attr("stroke-width", 2)
+              .attr("d", d3.line()
+                .x(function(d) { return x(d.Dy) })
+                .y(function(d) { return y(d.tau) })
+                );
+            svg
+              .selectAll("dot")
+              .data(data)
+              .enter()
+              .append("circle")
+                .attr("cx", function(d) { return x(d.Dy) } )
+                .attr("cy", function(d) { return y(d.tau) } )
+                .attr("r", 2)
+                .attr("fill", "#00B945");
+            
+            // ESTIMATED EFFECTS
+            // Show confidence interval
+            svg.append("path")
+              .datum(data)
+              .attr("fill", "#0C5DA5")
+              .attr("stroke", "none")
+              .attr("opacity", 0.2)
+              .attr("d", d3.area()
+                .x(function(d) { return x(d.Dy) })
+                .y0(function(d) { return y(d.conf_left) })
+                .y1(function(d) { return y(d.conf_right) })
+                );
+            svg
+              .append("path")
+              .datum(data)
+              .attr("fill", "none")
+              .attr("stroke", "#0C5DA5")
+              .attr("stroke-width", 2)
+              .attr("d", d3.line()
+                .x(function(d) { return x(d.Dy) })
+                .y(function(d) { return y(d.tau_hat) })
+                );
+            svg
+              .selectAll("dot")
+              .data(data)
+              .enter()
+              .append("circle")
+                .attr("cx", function(d) { return x(d.Dy) } )
+                .attr("cy", function(d) { return y(d.tau_hat) } )
+                .attr("r", 2)
+                .attr("fill", "#0C5DA5");
+               
+    // Legend
+          svg
+          .append("circle")
+          .attr("cx", 20)
+          .attr("cy", 16)
+          .attr("r", 4)
+          .style("fill", "#00B945")
+          svg
+            .append("text")
+            .attr("x", 30)
+            .attr("y", 20)
+            .text("Estimates")
+            .style("font-size", "12px")
+            .attr("alignment-baseline","middle")          
+            svg
+          .append("circle")
+          .attr("cx", 20)
+          .attr("cy", 36)
+          .attr("r", 4)
+          .style("fill", "#0C5DA5")
+          svg
+            .append("text")
+            .attr("x", 30)
+            .attr("y", 40)
+            .text("Truth")
+            .style("font-size", "12px")
+            .attr("alignment-baseline","middle")          
+
+});
+
+// append the svg object to the body of the page
+var svg2 = d3.select("#figure_2")
+.append("svg")
+.attr("width", width + margin.left + margin.right)
+.attr("height", height + margin.top + margin.bottom)
+.append("g")
+.attr("transform",
+  "translate(" + margin.left + "," + margin.top + ")");
+
+//Read the data
+d3.csv("data/d3_post.csv", function(data) {
+    
+    // Add X axis --> it is a date format
+    var x2 = d3.scaleLinear()
+    .domain([0,1300])
+    .range([ 0, width ]);
+    svg2.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .attr("class", "axis")              
+    .call(d3.axisBottom(x2)
+            .ticks(5));
+
+    // text label for the x axis
+    svg2.append("text")
+        .attr("transform",
+              "translate(" + (width/2) + " ," + 
+                            (height + margin.top + 25) + ")")
+        .style("text-anchor", "middle")
+        .style("font-size", "14px")
+        .text("Rank")              
+
+        // Add Y axis
+    var y2 = d3.scaleLinear()
+    .domain([-60, 60])
+    .range([ height, 0 ]);
+    svg2.append("g")
+    .attr("class", "axis")              
+    .call(d3.axisLeft(y2)
+          .ticks(5));
+
+    // text label for the y axis
+    svg2.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "2.5em")
+        .style("font-size", "14px")    
+        .style("text-anchor", "middle")
+        .text("Value");
+    svg2
+      .append("g")
+      .selectAll("dot")
+      .data(data)
+      .enter()
+      .append("circle")
+        .attr("cx", function(d) { return x2(d.index) } )
+        .attr("cy", function(d) { return y2(d.tau) } )
+        .attr("r", 2)
+        .attr("fill", "#0C5DA5");
+    svg2
+      .append("g")
+      .selectAll("dot")
+      .data(data)
+      .enter()
+      .append("circle")
+        .attr("cx", function(d) { return x2(d.index) } )
+        .attr("cy", function(d) { return y2(d.tau_hat) } )
+        .attr("r", 2)
+        .attr("opacity", 0.2)
+        .attr("fill", "#00B945");
+    // Legend
+    svg2
+      .append("circle")
+      .attr("cx", 20)
+      .attr("cy", 16)
+      .attr("r", 4)
+      .style("fill", "#00B945")
+    svg2
+      .append("text")
+      .attr("x", 30)
+      .attr("y", 20)
+      .text("Estimates")
+      .style("font-size", "12px")
+      .attr("alignment-baseline","middle")          
+    svg2
+      .append("circle")
+      .attr("cx", 20)
+      .attr("cy", 36)
+      .attr("r", 4)
+      .style("fill", "#0C5DA5")
+    svg2
+      .append("text")
+      .attr("x", 30)
+      .attr("y", 40)
+      .text("Truth")
+      .style("font-size", "12px")
+      .attr("alignment-baseline","middle")     
+});
+</script>
+
+        <p>Figure \ref{fig:simresults} show simulation results from a single draw - the results are stable across simulations. In panel A I sort the post-treatment sample by the true simulated ITEs and plot on top of these the predicted ITEs of the causal forest. These are pooled across $\Delta t \lessgtr 0$ and a random 5% of observations are shown for each case.  The forest predictions trace out ITEs across the sample with some noise which is to be expected. Around the tails of the distribution the causal forest looses precision. This is also to be expected as the sample thins out in these regions. Panel B contains a standard event study graph where I compute average treatment effects by $\Delta t$. Once again the causal forest picks up most of the variation with some error towards the ends of the sample.</p>
+
+        <p>The results shown above indicate that the causal forest is a valid method for event study designs. The model performs well in estimating both ATEs and ITEs in a relatively standard data-generating process, albeit only when using a sequence of cross sectional models. While the results here are reassuring one should however note that I have not carried out more extensive investigations of the limitations of the CF model. It is therefore still unclear that it will perform equally well under e.g. autocorrelation of $y_{it}$ or $\tau_i$. It should furthermore be noted that the estimates within each event-time period appear to have difficulty picking up extreme values of $\tau(x)$.</p> 
+
+        <h1>Data and sample selection</h1>
+        <p>The data used in this study are drawn from the registries of Statistics Denmark. The employment data cover all registered firms and all registered employment relationships of these firms between 1980 and 2016. In the following I describe how I identify firms conducting a mass layoff and how i further identify which employees were let go during the event.</p> 
+
+        <h2>Firms</h2>
+        <p>To identify the causal effect of layoffs I follow the approach of <cite id="jls_1993">JLS (1993)</cite>. By only considering firms that lay off a substantial amount of their workforce at once I can rule out selection based on some kinds of unobserved behavior such as misconduct, extraordinarily poor performance etc. Despite this firms might still be able to select poor performers when deciding who to let go, or they might choose to fire in departments where the prospects for continued profits are low. These kinds of selection are generally difficult to get rid of and I treat them in greater detail in section \ref{subsec:individuals}.</p>
+
+        <p>To identify firms that conduct a mass layoff I initially select all firms in Denmark. The sample is then reduced to remove firms which are not contiguously observed throughout all years they exist, and firms that exist for less than 10 years in total. The only exception to this is that any firm that exist in the final year of the dataset is included despite not having existed for 10 prior years. I further narrow the sample to firms that had at least 50 employees in all of the five years leading up to their mass-layoff and at least 10 employees in all years. I do this to exclude firms where a reduction in workforce is in fact only a reduction by a few individuals. After filtering the sample a total of 671 firms are left who conduct mass layoffs.</p>
+        \begin{figure}[!h]
+          \centering
+          \includegraphics[width=0.8\textwidth]{03_figures/firm_size_overtime.pdf}
+          \caption{Firm sizes among mass layoff sample and among other firms}
+          \label{fig: firmsize}
+        \end{figure}
+        <p>Following <cite id="jls_1993">JLS (1993)</cite> on Pennsylvania data and <cite id="hummels_2012">Hummels et al. (2012)</cite> who also identify mass layoffs in Danish registry data I determine mass layoffs as a firm reducing its total number of employees by more than 30%. Mass layoff events are registered in an event window spanning 1990 to 2004. The beginning and end of the window is set to span as many years as possible, albeit constrained to ensure I observe data on firms and workers for 10 years before and 12 years after an event. I end the event window two years early to avoid a data break in 2005 where municipal employers enter the standard employer registration system CVR.</p>
+
+        <p>To get some intuition about the kind of firms selected I plot the mean number of employees by the relative time $\Delta y = year - year_{\text{mass layoff}}$ in figure \ref{fig: firmsize}. Firms on average have approximately 400 employees in the ten years leading up to their firing event. This figure drops to an average of 150 employees after firing. Firms that close are not included in these figures and their employees are not included in the subsequent analysis as they have no good control group.</p>
+        
+        
+        <h2>Individuals</h2>
+        <p>Having identified a sample of firms that conduct a mass layoff I turn to determining the employees to use in the final analysis. These all work in one of the mass-layoff firms, but not all are fired in the mass layoff. Because firms number of employees and individuals employers are registered each year in November pinpointing the exact date of the mass layoff is not possible with the data I have available. To get around this I consider for a firm $f$ that conducts a mass-layoff in year $\Delta y=0$ the pool of employees working there at $\Delta y=-1$. I define one of these as a separator if either at time $\Delta y=0$ and/or time $\Delta y=1$ they cease to work at firm $f$. This risks including individuals fired the year after a mass layoff in the treatment group which should ideally consist only of those laid of at a single point in time. However because employers are only registered in November those who are either fired in year $\Delta y=0$ but find no other occupation before November, or fired at $\Delta y=0$ but after November will have the firing firm registered as their employer at time $0$.</p>
+
+        <p>Many firms employ workers on short term contracts as part of their normal operation. Workers employed under such contracts are likely to expect layoffs and plan ahead to avoid sharp changes in income. To avoid skewing my estimates of the wage-loss of unemployment I remove short-term workers from the sample. In particular I require of the sampled individuals that they have at least 5 years of tenure at the firing firm. I also remove people who are not between 25 and 50 at the year of the event. This ensures only a minority of the sample can feasibly transition to education or retirement following the shock. Finally I consider only workers who are salary earners i.e. I exclude individuals who are firm owners, self-employed, top management, spouses of firm owners and employees on leave the year before the event.</p>
+        
+        \begin{figure}[!h]
+          \centering
+          \includegraphics[width=0.8\textwidth]{03_figures/income_leavers_stayers.pdf}
+          \caption{Raw mean wages by $\Delta y$}
+          \label{fig:treat_control_means}
+        \end{figure}
+        
+        <p>Figure \ref{fig:treat_control_means} plots raw means of the wage variable $w_i$ across $\Delta y$ for the identified separators and stayer. While the average reduction in wages is not massive the means cover large heterogeneity with some separators earning close to 0 income in the subsequent years and others increasing their earnings immediately after separation. On the face of it this graph suggests that earnings losses are highly persistent with almost no recovery visible.</p> 
+        </div>
+      <div class="col-sm-3"></div>
   </div>
-</div>
-
-<!--
-<p class="author" data-toggle="tooltip" data-placement="right" data-popover="true" 
-    data-html=true data-content="<a href='http://www.econ.ku.dk/cebi' target='blank' >CEBI, University of Copenhagen.</a> jkr@econ.ku.dk"> Joachim Kahr Rasmussen</p>
-<p class="author" data-toggle="tooltip" data-placement="right" data-popover="true" 
-data-html=true data-content="<a href='http://www.econ.ku.dk/cebi' target='blank' >CEBI, University of Copenhagen.</a> kuol@econ.ku.dk"> Kristian Urup Olesen Larsen</p>
--->
-
-<div class="abstract">
-  <p>
-    I use the causal forest model proposed by <span class="citation" data-toggle="tooltip" data-placement="bottom" data-popover="true" 
-    data-html=true data-content="they, Susan, Julie Tibshirani, et al. “Generalized Random Forests”.arXiv:1610.01271[econ, stat](5 Oct. 2016) 10/10/2019 <a href='https://arxiv.org/abs/1610.01271' target='blank' >https://arxiv.org/abs/1610.01271</a>">(Ishakov et al, 2017)</span> to estimate heterogeneity in earnings losses due to sudden unemployment. I find large and persistent mean effects but also substantial heterogeneity across individuals. On average individuals loose about 20\% of their potential earnings in the first year after separation but some loose amounts significantly larger than this. After 10 years separators are still worse of than their staying counterparts but a fraction will also have surpassed their peers in terms of earnings. Those who suffer large initial losses are slow at catching up and can as such expect much larger lifetime losses than the separators with small initial losses.
-  </p>
-</div>
-
-<p>There is a large existing literature on displacement and unemployment in economics. Most known is probably \textcite{jacobson_earnings_1993} who use an event study to compare earnings of laid of workers to their staying counterparts. More recently focus has shifted from the purely economic consequences of unemployment to also cover questions about e.g. health and educational attainment \parencite{michaud_effect_2016,sullivan_job_2009,ost_impact_2016}.
-A large and economically significant scaring effect have been documented in the earnings of separated workers \citep{ruhm_are_1991} but little is known about the distributions of these effects across separators.</p>
-
-<p>In this paper I contribute to the literature on earnings losses by augmenting the classic study by \citeauthor{jacobson_earnings_1993} with modern methods for individual treatment effect estimation developed by \textcite{athey_generalized_2016}. I show simulation results that suggest the causal forest can validly be applied for inference in event-studies and subsequently find large and persistent heterogeneity in the earnings losses due to displacement. I find clear evidence on the negative consequences of displacement but also show that 10 years after being fired a substantial proportion of the displaced have positive treatment effect indicating they have at that point surpassed their control group in terms of earnings. Importantly I also show that earnings losses are not only persistent in the time dimension, but also in terms of within-distribution position. An individual with estimated losses in the first quintile will on average only be in the second quintile 15 years later.</p>
-
-
-</div>
-<div class="col-sm-3"></div>
-</div>
 </div>
 
 </main>
 </body>
 
 <script>
+  // Popovers
   var originalLeave = $.fn.popover.Constructor.prototype.leave;
   $.fn.popover.Constructor.prototype.leave = function(obj){
     var self = obj instanceof this.constructor ?
@@ -102,7 +476,23 @@ A large and economically significant scaring effect have been documented in the 
     }
   };
   
-  $(document).popover({ selector: '[data-popover]', trigger: 'hover click', delay: {show: 30, hide: 400}});
-  </script>
-  
+  $(document).popover({ selector: '[data-popover]', trigger: 'hover click', delay: {show: 30, hide: 200}});
+</script>
+
+<script>
+// Replace <cite> tags with hover content.
+document.addEventListener('DOMContentLoaded', function() {  
+  var citations = Array.from(document.getElementsByTagName('cite'));
+  var replacements = document.getElementById("litterature");
+  for (var i = 0; i < citations.length; i++) {
+    var text = citations[i].textContent.trim();
+    citations[i].innerHTML = "";
+    var id = "#" + citations[i].id;
+    var replace = replacements.querySelector(id).cloneNode();
+    replace.innerHTML += text;
+    citations[i].appendChild(replace);
+  }
+});  
+</script>
+
 </html>
