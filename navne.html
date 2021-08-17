@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- 
+    Build upon the website of Sebastian Barfort, 
+    https://github.com/sebastianbarfort
+-->
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+<title>Politiske navne</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+<main>
+    <div class="container">
+        <h1>Politiker navn:</h1>        
+        <div id="name">Hej Harald</div>
+
+        <script>
+            function capFirst(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            function middleName(names) {
+                var n = Math.random();
+
+                if (n < 0.3) {
+                    return names[getRandomInt(0, names.length + 1)].charAt(0).toUpperCase() + '. ';
+                };
+                if (n <= 0.6) {
+                    return names[getRandomInt(0, names.length + 1)] + '-';
+                };
+                return ''
+            }
+
+            function newName(){
+
+            var name1 = ["Peter", "Lars", "Pernille", "Jeppe", "Morten", "Kasper", "Mattias", "Nick", "Henrik", "Møller", "Rasmus", "Lea", "Kaare", "Lennart", "Mette", "Magnus", "Astrid", "Rasmus", 
+                         "Henrik", "Kasper", "Trine", "Bjørn", "Jan", "Johansen", "Dan", "Julie", "Benny", "Anders", "Christian", "Jesper", "Troels", "Birgitte", "Camilla", "Daniel", "Leif",
+                        "Jens", "Joel", "Henrik", "Kristian", "Malte", "Nicolai" , "Mogens", "Thomas", "Annette", "Anne", "Mette", "Ane", "Orla", "Simon", "Bjarne", "Flemming", "Rasmus"];
+            var name2 = ["Hummelgaard", "Aslan", "Rasmussen", "Rosenkrantz", "Theil", "Bruus", "Bødskov", "Sand", "Kjær", "Tesfaye", "Hækkerup", "Stoklund", "Wermelin", "Dybvad", "Bek", "Damsbo", "Andersen",
+                         "Gjerskov", "Heunicke", "Krag", "Horn", "Langhoff", "Sass", "Larsen", "Roug", "Bramsen", "Brandenborg", "Jørgensen", "Skovsby", "Engelbrecht", "Kronborg", "Rabjerg", "Madsen",
+                         "Petersen", "Ravn", "Vind", "Fabricius", "Toft", "Jakobsen", "Lahn", "Jensen", "Dam", "Kristensen", "Hove", "Larsen", "Wammen", "Jensen", "Jensen", "Lind" , "Paulin", "Frederiksen",
+                         "Halsboe", "Jørgensen", "Hav", "Kollerup", "Laustsen", "Møller", "Mortensen", "Prehn"
+                        ];
+
+            var firstname = name1[getRandomInt(0, name1.length + 1)] + ' ';
+            var middlename = middleName(name2);
+            var lastname = name2[getRandomInt(0, name2.length + 1)];
+
+            var name = firstname + middlename + lastname;
+
+                var div = document.getElementById("name");
+                div.innerHTML = name;
+            }
+        </script>
+
+        </br>        
+        </br>
+
+        <button onclick="newName()">Nyt navn</button> 
+    </div>
+</main>
+</body>
+</html>
