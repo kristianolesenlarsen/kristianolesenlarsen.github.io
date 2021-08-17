@@ -115,6 +115,14 @@ body {
     overflow: hidden;
 }
 
+.blue {
+  color:#5ca8ff
+}
+
+.orange {
+  color: rgba(255, 178, 91, 0.623)
+}
+
   .grey {
     color:#646464
   }
