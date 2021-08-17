@@ -29,10 +29,10 @@
                 var n = Math.random();
 
                 if (n < 0.3) {
-                    return names[getRandomInt(0, names.length + 1)].charAt(0).toUpperCase() + '. ';
+                    return names[getRandomInt(0, names.length)].charAt(0).toUpperCase() + '. ';
                 };
                 if (n <= 0.6) {
-                    return names[getRandomInt(0, names.length + 1)] + '-';
+                    return names[getRandomInt(0, names.length)] + '-';
                 };
                 return ''
             }
