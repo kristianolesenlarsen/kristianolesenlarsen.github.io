@@ -39,23 +39,27 @@
 
             function newName(){
 
-            var name1 = ["Peter", "Lars", "Pernille", "Jeppe", "Morten", "Kasper", "Mattias", "Nick", "Henrik", "Møller", "Rasmus", "Lea", "Kaare", "Lennart", "Mette", "Magnus", "Astrid", "Rasmus", 
-                         "Henrik", "Kasper", "Trine", "Bjørn", "Jan", "Johansen", "Dan", "Julie", "Benny", "Anders", "Christian", "Jesper", "Troels", "Birgitte", "Camilla", "Daniel", "Leif",
-                        "Jens", "Joel", "Henrik", "Kristian", "Malte", "Nicolai" , "Mogens", "Thomas", "Annette", "Anne", "Mette", "Ane", "Orla", "Simon", "Bjarne", "Flemming", "Rasmus"];
-            var name2 = ["Hummelgaard", "Aslan", "Rasmussen", "Rosenkrantz", "Theil", "Bruus", "Bødskov", "Sand", "Kjær", "Tesfaye", "Hækkerup", "Stoklund", "Wermelin", "Dybvad", "Bek", "Damsbo", "Andersen",
-                         "Gjerskov", "Heunicke", "Krag", "Horn", "Langhoff", "Sass", "Larsen", "Roug", "Bramsen", "Brandenborg", "Jørgensen", "Skovsby", "Engelbrecht", "Kronborg", "Rabjerg", "Madsen",
-                         "Petersen", "Ravn", "Vind", "Fabricius", "Toft", "Jakobsen", "Lahn", "Jensen", "Dam", "Kristensen", "Hove", "Larsen", "Wammen", "Jensen", "Jensen", "Lind" , "Paulin", "Frederiksen",
-                         "Halsboe", "Jørgensen", "Hav", "Kollerup", "Laustsen", "Møller", "Mortensen", "Prehn"
-                        ];
+                var name1 = ["Peter", "Lars", "Pernille", "Jeppe", "Morten", "Kasper", "Mattias", "Nick", "Henrik", "Møller", "Rasmus", "Lea", "Kaare", "Lennart", "Mette", "Magnus", "Astrid", "Rasmus", 
+                            "Henrik", "Kasper", "Trine", "Bjørn", "Jan", "Johansen", "Dan", "Julie", "Benny", "Anders", "Christian", "Jesper", "Troels", "Birgitte", "Camilla", "Daniel", "Leif",
+                            "Jens", "Joel", "Henrik", "Kristian", "Malte", "Nicolai" , "Mogens", "Thomas", "Annette", "Anne", "Mette", "Ane", "Orla", "Simon", "Bjarne", "Flemming", "Rasmus"];
+                var name2 = ["Hummelgaard", "Aslan", "Rasmussen", "Rosenkrantz", "Theil", "Bruus", "Bødskov", "Sand", "Kjær", "Tesfaye", "Hækkerup", "Stoklund", "Wermelin", "Dybvad", "Bek", "Damsbo", "Andersen",
+                            "Gjerskov", "Heunicke", "Krag", "Horn", "Langhoff", "Sass", "Larsen", "Roug", "Bramsen", "Brandenborg", "Jørgensen", "Skovsby", "Engelbrecht", "Kronborg", "Rabjerg", "Madsen",
+                            "Petersen", "Ravn", "Vind", "Fabricius", "Toft", "Jakobsen", "Lahn", "Jensen", "Dam", "Kristensen", "Hove", "Larsen", "Wammen", "Jensen", "Jensen", "Lind" , "Paulin", "Frederiksen",
+                            "Halsboe", "Jørgensen", "Hav", "Kollerup", "Laustsen", "Møller", "Mortensen", "Prehn"
+                            ];
 
-            var firstname = name1[getRandomInt(0, name1.length + 1)] + ' ';
-            var middlename = middleName(name2);
-            var lastname = name2[getRandomInt(0, name2.length + 1)];
+                var int1 = getRandomInt(0, name1.length);
+                var int2 = getRandomInt(0, name2.length);
 
-            var name = firstname + middlename + lastname;
+                var firstname = name1[int1] + ' ';
+                var middlename = middleName(name2);
+                var lastname = name2[int2];
+                var name = firstname + middlename + lastname;
 
                 var div = document.getElementById("name");
                 div.innerHTML = name;
+
+                console.log(int1, int2);
             }
         </script>
 
