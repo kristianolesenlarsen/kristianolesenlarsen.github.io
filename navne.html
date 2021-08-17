@@ -11,6 +11,46 @@
 
 <title>Politiske navne</title>
 <link rel="stylesheet" type="text/css" href="index.css">
+<style>
+    .slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+</style>
 <main>
     <div class="container">
         <h1>Politiker navn:</h1>        
@@ -27,14 +67,18 @@
 
             function middleName(names) {
                 var n = Math.random();
+                
+                var p_dot = 0.25;
+                var p_dash = 0.1;
+                var p_full = 0.2;
 
-                if (n < 0.3) {
+                if (n < p_dot) {
                     return names[getRandomInt(0, names.length)].charAt(0).toUpperCase() + '. ';
                 };
-                if (n <= 0.45) {
+                if (n <= p_dot + p_dash) {
                     return names[getRandomInt(0, names.length)] + '-';
                 };
-                if (n <= 0.55) {
+                if (n <= p_dot + p_dash + p_full) {
                     return names[getRandomInt(0, names.length)] + ' ';
                 };
 
@@ -124,6 +168,7 @@
         </br>
 
         <button onclick="newName()">Nyt navn</button> 
+
     </div>
 </main>
 </body>
