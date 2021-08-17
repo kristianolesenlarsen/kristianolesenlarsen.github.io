@@ -34,20 +34,77 @@
                 if (n <= 0.45) {
                     return names[getRandomInt(0, names.length)] + '-';
                 };
+                if (n <= 0.55) {
+                    return names[getRandomInt(0, names.length)] + ' ';
+                };
+
                 return ''
             }
-
             function newName(){
 
-                var name1 = ["Peter", "Lars", "Pernille", "Jeppe", "Morten", "Kasper", "Mattias", "Nick", "Henrik", "Rasmus", "Lea", "Kaare", "Lennart", "Mette", "Magnus", "Astrid", "Rasmus", 
+                var SocDemFirst = ["Peter", "Lars", "Pernille", "Jeppe", "Morten", "Kasper", "Mattias", "Nick", "Henrik", "Rasmus", "Lea", "Kaare", "Lennart", "Mette", "Magnus", "Astrid", "Rasmus", 
                             "Henrik", "Kasper", "Trine", "Bjørn", "Jan", "Johansen", "Dan", "Julie", "Benny", "Anders", "Christian", "Jesper", "Troels", "Birgitte", "Camilla", "Daniel", "Leif",
                             "Jens", "Joel", "Henrik", "Kristian", "Malte", "Nicolai" , "Mogens", "Thomas", "Annette", "Anne", "Mette", "Ane", "Orla", "Simon", "Bjarne", "Flemming", "Rasmus"];
-                var name2 = ["Hummelgaard", "Aslan", "Møller", "Rasmussen", "Rosenkrantz", "Theil", "Bruus", "Bødskov", "Sand", "Kjær", "Tesfaye", "Hækkerup", "Stoklund", "Wermelin", "Dybvad", "Bek", "Damsbo", "Andersen",
+                var SocDemLast = ["Hummelgaard", "Aslan", "Møller", "Rasmussen", "Rosenkrantz", "Theil", "Bruus", "Bødskov", "Sand", "Kjær", "Tesfaye", "Hækkerup", "Stoklund", "Wermelin", "Dybvad", "Bek", "Damsbo", "Andersen",
                             "Gjerskov", "Heunicke", "Krag", "Horn", "Langhoff", "Sass", "Larsen", "Roug", "Bramsen", "Brandenborg", "Jørgensen", "Skovsby", "Engelbrecht", "Kronborg", "Rabjerg", "Madsen",
                             "Petersen", "Ravn", "Vind", "Fabricius", "Toft", "Jakobsen", "Lahn", "Jensen", "Dam", "Kristensen", "Hove", "Larsen", "Wammen", "Jensen", "Jensen", "Lind" , "Paulin", "Frederiksen",
                             "Halsboe", "Jørgensen", "Hav", "Kollerup", "Laustsen", "Møller", "Mortensen", "Prehn"
                             ];
 
+                var DFFirst = ["Karina", "Alex", "Lise", "Liselott", "Bent", "René", "Jens", "Mette", "Søren", "Dennis", "Pia", "Marie", "Morten", "Hans", "Peter"];
+                var DFLast = ["Adsbøl", "Ahrendtsen", "Bech", "Blixt", "Bøgsted", "Christensen", "Dahl", "Dahl", "Dencker", "Espersen", "Flydtkjær", "Kjærsgaard", "Krarup", 
+                              "Messerschmidt", "Skibby", "Skaarup", "Kristian"];
+
+
+                var KonsFirst = ["Mette", "Katarina", "Mads", "Britt", "Birgitte", "Niels", "Rasmus", "Mona", "Naser", "Brigitte", "Marcus", "Per", "Mai", "Søren"];
+                var KonsLast = ["Abildgaard", "Ammitzbøll", "Andersen", "Bager", "Bergman", "Hansen", "Jarlov", "Juul", "Khader", "Klintskov", "Jerkel", "Knuth",
+                                "Larsen", "Mercado", "Poulsen"];
+
+                var ØFirst = ["Eva", "Jette", "Peder", "Henning", "Christian", "Rune", "Rosa", "Søren", "Pernille", "Jakob", "Søren", "Victoria", "Mai"];
+                var ØLast = ["Flyvholm", "Gottlieb", "Hvelplund", "Hyllested", "Juhl", "Lund", "Lund", "Rasmussen", "Skipper", "Sølvhøj", "Søndergaard", "Velasquez", "Villadsen"];
+
+                var inuitFirst = ["Aaja"];
+                var inuitLast = ["Chemnitz", "Larsen"];
+
+                var javnaFirst = ["Sjúrður"];
+                var javnaLast = ["Skaale"];
+
+                var KDFirst = ["Jens"];
+                var KDLast = ["Rohde"];
+
+                var LAFirst = ["Henrik", "Ole", "Alex"];
+                var LALast = ["Dahl", "Olesen", "Birk", "Vanopslagh"];
+
+                var NBFirst = ["Lars", "Peter", "Mette", "Pernille"];
+                var NBLast = ["Mathiesen", "Seier", "Christensen", "Thiesen", "Vermund"];
+
+                var RVFirst = ["Anne", "Kristian", "Marianne", "Susan", "Martin", "Stinus", "Samira", "Sofie", "Kathrine", "Rasmus", "Kathrine", "Lotte", "Zenia", "Andreas"];
+                var RVLast = ["Sophie", "Callesen", "Hegaard", "Jelved", "Kronborg", "Lidegaard", "Lindgreen", "Nawa", "Nielsen", "Carsten", "Olldag", "Petersen", "Robsøe", 
+                              "Rod", "Stampe", "Steenberg"];
+
+                var samFirst = ["Edmund"];
+                var samLast = ["Joensen"];
+
+                var siumutFirst = ["Aki-Matilda"];
+                var siumutLast = ["Høegh", "Dam"];
+
+                var SFFirst = ["Kirsten", "Lisbeth", "Anne", "Astrid", "Karina", "Pia", "Karsten", "Jacob", "Signe", "Charlotte", "Rasmus", "Halime", "Ina", "Trine", "Carl"];
+                var SFLast = ["Normann", "Andersen", "Bech", "Nielsen", "Berthelsen", "Valentina", "Carøe", "Dehnhardt", "Dyhr", "Hønge", "Mark", "Munk", "Mølbæk", "Nordqvist",
+                              "Oguz", "Strøjer", "Schmidt", "Torp", "Valentin"];
+
+                var udenFirst = ["Simon", "Uffe", "Lars", "Sikandar", "Inger", "Susanne", "Orla"];
+                var udenlast = ["Emil", "Ammitzbøll", "Bille", "Elbæk", "Rasmussen", "Løkke", "Siddique", "Støjberg", "Zimmer", "Østerby"];
+
+                var VFirst = ["Tommy", "Marlene", "Hans", "Heidi", "Marie", "Erling", "Morten", "Thomas", "Louise", "Karen", "Jakob", "Claus", "Mads", "Martin", "Eva",
+                              "Jane", "Preben", "Anne", "Bertel", "Jacob", "Michael", "Peter", "Jan E.", "Carsten", "Stén"];
+                var VLast = ["Ahlers", "Ambo", "Rasmussen", "Andersen", "Bank", "Bjerre", "Bonnesen", "Dahlin", "Danielsen", "Elholm", "Ellemann", "Ellemann", "Jensen",
+                             "Frederiksen", "Hjort", "Fuglede", "Geertsen", "Hansen", "Heitmann", "Henriksen", "Honoré", "Østergaard", "Haarder", "Jensen", "Astrup",
+                             "Jensen", "Juel", "Jensen", "Jørgensen", "Kissmeyer", "Knuth"];
+
+                var name1 = SocDemFirst.concat(DFFirst).concat(KonsFirst).concat(ØFirst).concat(inuitFirst).concat(javnaFirst).concat(KDFirst).concat(LAFirst).concat(NBFirst).concat(RVFirst).concat(samFirst).concat(siumutFirst).concat(SFFirst).concat(udenFirst).concat(VFirst);
+                var name2 = SocDemLast.concat(DFLast).concat(KonsLast).concat(ØLast).concat(inuitLast).concat(javnaLast).concat(KDLast).concat(LALast).concat(NBLast).concat(RVLast).concat(samLast).concat(siumutLast).concat(SFLast).concat(udenlast).concat(VLast);
+
+                console.log(name1);
                 var int1 = getRandomInt(0, name1.length);
                 var int2 = getRandomInt(0, name2.length);
 
