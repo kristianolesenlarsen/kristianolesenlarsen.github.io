@@ -7,6 +7,12 @@ body {
     height:100%
   }
   
+  img {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+
   svg{
     margin: auto;
     display: block
@@ -135,6 +141,23 @@ body {
     margin-right:1rem;
   }
   
+  .abstract {
+    margin-right:1rem;
+    margin-left:1rem;
+    font-style: italic;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;    
+  }
+
+  .article{
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;    
+  }
+
   .list-reset {
     list-style:none;
     padding-left:0;
