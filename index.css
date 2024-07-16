@@ -130,7 +130,15 @@ body {
 }
 
   .grey {
-    color:#646464
+    color:#919191
+  }
+
+  .b {
+    font-weight: b;
+  }
+
+  .ul {
+    text-decoration-line: underline;
   }
   
   .mb4 {
